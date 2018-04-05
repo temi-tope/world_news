@@ -46,7 +46,7 @@ class Companies extends \yii\db\ActiveRecord
     {
         return [
             'company_id' => 'Company ID',
-            'comapny_name' => 'Comapny Name',
+            'comapny_name' => 'Company Name',
             'company_email' => 'Company Email',
             'company_address' => 'Company Address',
             'company_created_date' => 'Company Created Date',
