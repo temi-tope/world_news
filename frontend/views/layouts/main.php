@@ -10,6 +10,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -35,19 +36,20 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Event', 'url' => ['/event/index']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-        ['label' => 'Guest', 'url' => ['/guest/index']],
-        ['label' => 'Todo list', 'url' => ['/todo/index']],
-        ['label' => 'Shopping list', 'url' => ['/shopping-list/index']],
-        ['label' => 'Budget', 'url' => ['/budget/index']],
-    ];
+   
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems = [
+            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Event', 'url' => ['/events/index']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Guest', 'url' => ['/guest/index']],
+            ['label' => 'Todo list', 'url' => ['/todo/index']],
+            ['label' => 'Shopping list', 'url' => ['/shopping-list/index']],
+            ['label' => 'Budget', 'url' => ['/budget/index']],
+        ];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
@@ -63,8 +65,8 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
-
-    <div class="container">
+    
+    <div >
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

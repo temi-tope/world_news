@@ -16,7 +16,7 @@ body {
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
+    background-color:black;
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
@@ -118,3 +118,19 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.panelcust{
+    margin: 19px;
+}
+/* palevioletred */
+@media (min-width: 1200px){
+.colcust3 {
+    width: 33% !important;
+}}
+.navbar {
+    background-color: #060606b5;
+    background: #060606b5;
+    border-color: #060606b5;
+    color: palevioletred ;
+ }
+ 
+ .navbar li { color: palevioletred } 
