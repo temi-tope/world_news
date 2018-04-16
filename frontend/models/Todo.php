@@ -31,12 +31,11 @@ class Todo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['todo_id', 'events_id', 'task', 'completed', 'todo_notes'], 'required'],
-            [['todo_id', 'events_id'], 'integer'],
+            [['events_id', 'task', 'completed', 'todo_notes'], 'required'],
+            [['events_id'], 'integer'],
             [['completed'], 'string'],
             [['task'], 'string', 'max' => 45],
             [['todo_notes'], 'string', 'max' => 200],
-            [['todo_id', 'events_id'], 'unique', 'targetAttribute' => ['todo_id', 'events_id']],
             [['events_id'], 'exist', 'skipOnError' => true, 'targetClass' => Events::className(), 'targetAttribute' => ['events_id' => 'events_id']],
         ];
     }

@@ -36,12 +36,11 @@ class Guest extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['guest_id', 'events_id', 'guest_name', 'guest_gender', 'guest_age', 'guest_email', 'invited', 'attending', 'declined', 'rsvp'], 'required'],
-            [['guest_id', 'events_id', 'guest_age'], 'integer'],
+            [['events_id', 'guest_name', 'guest_gender', 'guest_age', 'guest_email', 'invited', 'attending', 'declined', 'rsvp'], 'required'],
+            [['events_id', 'guest_age'], 'integer'],
             [['invited', 'attending', 'declined', 'rsvp'], 'string'],
             [['guest_name', 'guest_gender'], 'string', 'max' => 45],
             [['guest_email'], 'string', 'max' => 100],
-            [['guest_id', 'events_id'], 'unique', 'targetAttribute' => ['guest_id', 'events_id']],
             [['events_id'], 'exist', 'skipOnError' => true, 'targetClass' => Events::className(), 'targetAttribute' => ['events_id' => 'events_id']],
         ];
     }

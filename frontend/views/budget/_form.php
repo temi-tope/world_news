@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
+use frontend\models\Events;
+
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Budget */
@@ -12,9 +15,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'budget_id')->textInput() ?>
-
-    <?= $form->field($model, 'events_id')->textInput() ?>
+    <?= $form->field($model, 'events_id')->dropDownList(
+        ArrayHelper::map(Events::find()->all(),'events_id','events_name'),
+        ['prompt'=>'Select Events']
+    )
+     ?>
 
     <?= $form->field($model, 'budget_name')->textInput(['maxlength' => true]) ?>
 

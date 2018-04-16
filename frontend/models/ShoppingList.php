@@ -35,12 +35,11 @@ class ShoppingList extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['list_id', 'events_id', 'item_name', 'purchase', 'unit', 'price', 'quantity_mode', 'quantity', 'list_note'], 'required'],
-            [['list_id', 'events_id', 'unit', 'quantity'], 'integer'],
+            [['events_id', 'item_name', 'purchase', 'unit', 'price', 'quantity_mode', 'quantity', 'list_note'], 'required'],
+            [['events_id', 'unit', 'quantity'], 'integer'],
             [['purchase'], 'string'],
             [['price'], 'number'],
             [['item_name', 'quantity_mode', 'list_note'], 'string', 'max' => 45],
-            [['list_id', 'events_id'], 'unique', 'targetAttribute' => ['list_id', 'events_id']],
             [['events_id'], 'exist', 'skipOnError' => true, 'targetClass' => Events::className(), 'targetAttribute' => ['events_id' => 'events_id']],
         ];
     }

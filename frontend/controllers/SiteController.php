@@ -72,6 +72,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        
         return $this->render('index');
     }
 
@@ -212,4 +213,5 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+   
 }

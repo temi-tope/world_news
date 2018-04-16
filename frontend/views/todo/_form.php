@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'todo_id')->textInput() ?>
-
     <?= $form->field($model, 'events_id')->textInput() ?>
 
     <?= $form->field($model, 'task')->textInput(['maxlength' => true]) ?>

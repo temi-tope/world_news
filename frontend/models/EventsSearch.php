@@ -60,11 +60,11 @@ class EventsSearch extends Events
         // grid filtering conditions
         $query->andFilterWhere([
             'events_id' => $this->events_id,
-            'events_date' => $this->events_date,
         ]);
 
         $query->andFilterWhere(['like', 'events_name', $this->events_name])
             ->andFilterWhere(['like', 'location', $this->location])
+            ->andFilterWhere(['like', 'events_date', $this->events_date])
             ->andFilterWhere(['like', 'notes', $this->notes]);
 
         return $dataProvider;

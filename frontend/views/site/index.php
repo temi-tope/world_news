@@ -1,6 +1,12 @@
 <?php
 
-/* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use frontend\models\Events;
+use frontend\models\Budget;
+use frontend\models\Guest;
+use frontend\models\Todo;
 
 $this->title = 'My Event';
 ?>
@@ -23,7 +29,9 @@ $this->title = 'My Event';
         <p class="lead">This is your event planner</p>
 
         <!-- <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p> -->
-        <select class="form-control selectwidth" style="margin-left: 262px;">
+        
+     
+        <select class="form-control" >
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -48,9 +56,10 @@ $this->title = 'My Event';
             </div>
             </div>
             </div>
+           
 
 
-            <div class="row">
+            
         <div class="col-lg-3 colcust3">
         <div class=" panel panel-default ">
             <div class="panel-heading">
@@ -68,7 +77,7 @@ $this->title = 'My Event';
             </div>
 
 
-            <div class="row">
+            
         <div class="col-lg-3 colcust3 ">
         <div class=" panel panel-default ">
             <div class="panel-heading">

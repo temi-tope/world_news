@@ -33,12 +33,11 @@ class Budget extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['budget_id', 'events_id', 'budget_name', 'paid_amount', 'budget_type', 'budget_amount', 'budget_note'], 'required'],
-            [['budget_id', 'events_id'], 'integer'],
+            [['events_id', 'budget_name', 'paid_amount', 'budget_type', 'budget_amount', 'budget_note'], 'required'],
+            [['events_id'], 'integer'],
             [['paid_amount', 'budget_amount'], 'number'],
             [['budget_name', 'budget_type'], 'string', 'max' => 45],
             [['budget_note'], 'string', 'max' => 100],
-            [['budget_id', 'events_id'], 'unique', 'targetAttribute' => ['budget_id', 'events_id']],
             [['events_id'], 'exist', 'skipOnError' => true, 'targetClass' => Events::className(), 'targetAttribute' => ['events_id' => 'events_id']],
         ];
     }

@@ -15,19 +15,10 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'events_id') ?>
-
-    <?= $form->field($model, 'events_name') ?>
-
-    <?= $form->field($model, 'location') ?>
-
-    <?= $form->field($model, 'events_date') ?>
-
-    <?= $form->field($model, 'notes') ?>
+     <?= $form->field($model, 'events_name') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
