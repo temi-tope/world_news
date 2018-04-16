@@ -23,7 +23,7 @@ $this->title = 'My Event';
         <p class="lead">This is your event planner</p>
 
         <!-- <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p> -->
-        <select class="form-control">
+        <select class="form-control selectwidth" style="margin-left: 262px;">
             <option>1</option>
             <option>2</option>
             <option>3</option>

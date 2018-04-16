@@ -130,7 +130,14 @@ a.desc:after {
     background-color: #060606b5;
     background: #060606b5;
     border-color: #060606b5;
-    color: palevioletred ;
- }
- 
- .navbar li { color: palevioletred } 
+    
+ } 
+ .navbar-inverse .navbar-nav > li > a {
+    color: #f1b5cb;
+}
+navbar-inverse .navbar-brand {
+    color: #f1b5cb;
+}
+.selectwidth{
+    width: 50% !important;
+}
