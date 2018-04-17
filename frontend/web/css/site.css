@@ -134,6 +134,7 @@ a.desc:after {
     border-color: #060606b5;
     
  } 
+
  .navbar-inverse .navbar-nav > li > a {
     color: #f1b5cb;
 }
@@ -142,4 +143,11 @@ navbar-inverse .navbar-brand {
 }
 .selectwidth{
     width: 50% !important;
+}
+.panelhead{
+    background-color: #060606b5 !important;
+    background: #060606b5 !important;
+    border-color: #060606b5 !important;
+    color: #f1b5cb !important;
+    font-size: 56;
 }
