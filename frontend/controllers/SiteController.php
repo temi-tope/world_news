@@ -12,6 +12,9 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Events;
+use yii\web\NotFoundHttpException;
+//use Codeception\Events;
 
 /**
  * Site controller
@@ -72,8 +75,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        
+        $model= $this->findModel('Events');;
         return $this->render('index');
+    }
+
+    protected function findModel($events_id)
+    {
+        if (($model = Events::findOne([ 'events_id' => $events_id])) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 
     /**

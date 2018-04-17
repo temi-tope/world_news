@@ -16,10 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Budget', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('', ['create'], ['class' => 'btn btn-success glyphicon glyphicon-plus']) ?>
     </p>
 
     <?= GridView::widget([
+        'class' =>'table-hover table-dark',
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

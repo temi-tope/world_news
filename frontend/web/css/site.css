@@ -22,14 +22,16 @@ body {
 }
 
 .jumbotron {
-    text-align: center;
+    text-align: left;
     background-color: transparent;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
+ .jumbotron .btn {
+    background-color:black;
+    color: #c55;
+    
+    
+} 
 
 .not-set {
     color: #c55;

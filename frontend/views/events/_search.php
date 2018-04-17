@@ -13,13 +13,12 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
+        'class'  => "form-inline",
     ]); ?>
-
-     <?= $form->field($model, 'events_name') ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-    </div>
+     <div class="selectwidth"><?= $form->field($model, 'events_name') ?></div>
+     </div>
+     <span> <?= Html::submitButton('Search', ['class' => 'btn btn-default ']) ?></span>
 
     <?php ActiveForm::end(); ?>
 

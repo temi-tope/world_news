@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
@@ -30,14 +29,23 @@ $this->title = 'My Event';
 
         <!-- <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p> -->
         
-     
-        <select class="form-control" >
+        <div class="index-form">
+
+<?php $form = ActiveForm::begin(); ?>
+
+<?= $form->field($model, 'events_id')->dropDownList(
+    ArrayHelper::map(Events::find()->all(), 'events_id', 'events_name'),
+    ['prompt' => 'Select Events']
+)
+?>
+ <?php ActiveForm::end(); ?>
+        <!-- <select class="form-control" >
             <option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
             <option>5</option>
-        </select>
+        </select> -->
     </div>
 
         <div class="row">
