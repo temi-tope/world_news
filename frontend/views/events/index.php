@@ -33,7 +33,7 @@ $this->title = 'My Event';
     </div>
     <div class="col-xs-6 col-md-4">
         <div class="jumbotron">
-            <p><?= Html::button('Events', ['value'=>Url::to('index.php?r=events/create'),'class' => 'btn btn-default btn-lg glyphicon glyphicon-plus', 'id'=>'modalButton']) ?></p>
+            <p><?= Html::button(' Events', ['value'=>Url::to('index.php?r=events/create'),'class' => 'btn btn-default btn-lg glyphicon glyphicon-plus', 'id'=>'modalButton']) ?></p>
         <?php
         Modal::begin([
             'header'=>'<h2>Create Event</h2>',

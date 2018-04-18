@@ -2,15 +2,18 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\db\ActiveQuery;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Events */
-
-$this->title = $model->events_id;
+?>
+<div class="events-view container" >
+<?php
+$this->title = $model->events_name;
 $this->params['breadcrumbs'][] = ['label' => 'Events', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="events-view">
+
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,11 +31,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'events_id',
             'events_name',
             'location',
             'events_date',
             'notes',
+           
+            
+        ],
+    ]) ?>
+
+      <?= DetailView::widget([
+        'model' => $modelBudget,
+        'attributes' => [
+            'budget_name', 
+            'paid_amount',
+            'budget_type',
+            'budget_amount',
+            'budget_note',
         ],
     ]) ?>
 

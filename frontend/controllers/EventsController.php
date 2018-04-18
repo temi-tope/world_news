@@ -8,6 +8,8 @@ use frontend\models\EventsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\controllers\BudgetController;
+use frontend\models\Budget;
 
 /**
  * EventsController implements the CRUD actions for Events model.
@@ -52,9 +54,16 @@ class EventsController extends Controller
      */
     public function actionView($id)
     {
+        // var_dump($model = Events::findOne($id));
+        
+        $budget = Budget::find()->where(['events_id' => $id])->one();
+        if($budget !== null){
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'modelBudget'=>$budget,
         ]);
+    }
+    
     }
 
     /**
