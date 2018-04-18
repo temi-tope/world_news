@@ -51,7 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-<?php }else{?>
+<?php }
+else{
+    ?>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
