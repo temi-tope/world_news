@@ -39,8 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
             
         ],
     ]) ?>
-
-      <?= DetailView::widget([
+<?php if($modelBudget !== null){?>
+     <?= DetailView::widget([
         'model' => $modelBudget,
         'attributes' => [
             'budget_name', 
@@ -51,4 +51,13 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+<?php }else{?>
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            
+        ],
+    ]) ?>
+<?php } ?>
+     
 </div>

@@ -57,14 +57,14 @@ class EventsController extends Controller
         // var_dump($model = Events::findOne($id));
         
         $budget = Budget::find()->where(['events_id' => $id])->one();
-        if($budget !== null){
+        
         return $this->render('view', [
             'model' => $this->findModel($id),
             'modelBudget'=>$budget,
         ]);
     }
     
-    }
+   
 
     /**
      * Creates a new Events model.
