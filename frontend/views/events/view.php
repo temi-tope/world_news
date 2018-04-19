@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 use yii\db\ActiveQuery;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Events */
@@ -35,12 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'location',
             'events_date',
             'notes',
-           
             
         ],
     ]) ?>
     <p>
-        <?= Html::a('Update', ['update', 'id' => $modelBudget->budget_id], ['class' => 'btn btn-primary']) ?>
+    <?= Html::a('Update', [Url::to('budget/update')], ['class'=>'btn btn-primary','id' => $modelBudget->budget_id]) ?>
+        
         <?= Html::a('Delete', ['delete', 'id' => $modelBudget->budget_id], [
             'class' => 'btn btn-danger',
             'data' => [
