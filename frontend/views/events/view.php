@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
         ],
     ]) ?>
-    <p>
+     <p>
     <?= Html::a('Update', [Url::to('budget/update')], ['class'=>'btn btn-primary','id' => $modelBudget->budget_id]) ?>
         
         <?= Html::a('Delete', ['delete', 'id' => $modelBudget->budget_id], [
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+    </p> 
 <?php if($modelBudget !== null){?>
      <?= DetailView::widget([
         'model' => $modelBudget,

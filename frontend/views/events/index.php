@@ -40,7 +40,9 @@ $this->title = 'My Event';
             'id'=> 'modal',
             'size'=>'modal-lg',
         ]);
-        echo "<div id='modalContent'></div>";
+        echo "<div id='modalContent'>
+        
+        </div>";
         Modal::end();
         ?>
         </div>

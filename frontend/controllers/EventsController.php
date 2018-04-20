@@ -74,7 +74,7 @@ class EventsController extends Controller
     public function actionCreate()
     {
         $model = new Events();
-
+        $budget = Budget::find()->where(['events_id' => $id])->one();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->events_id]);
         }

@@ -12,8 +12,10 @@ use Yii;
  * @property string $location
  * @property string $events_date
  * @property string $notes
+ * @property int $user_id
  *
  * @property Budget[] $budgets
+ * @property User $user
  * @property Guest[] $guests
  * @property ShoppingList[] $shoppingLists
  * @property Todo[] $todos
@@ -35,8 +37,10 @@ class Events extends \yii\db\ActiveRecord
     {
         return [
             [['events_name', 'location', 'events_date', 'notes'], 'required'],
+            [['user_id'], 'integer'],
             [['events_name', 'location', 'events_date'], 'string', 'max' => 45],
             [['notes'], 'string', 'max' => 100],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -51,6 +55,7 @@ class Events extends \yii\db\ActiveRecord
             'location' => 'Location',
             'events_date' => 'Events Date',
             'notes' => 'Notes',
+            'user_id' => 'User ID',
         ];
     }
 
@@ -60,6 +65,14 @@ class Events extends \yii\db\ActiveRecord
     public function getBudgets()
     {
         return $this->hasMany(Budget::className(), ['events_id' => 'events_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**
