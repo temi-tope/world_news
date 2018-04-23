@@ -17,11 +17,8 @@ $this->title = 'My Event';
             </figure>
         </div>
     </div>
-    </section>
+</section>
 <div class="site-index container">
-<!-- <div>
-    <img src='event-management.jpg'>
-</div> -->
     <div class="jumbotron">
         <h1>Events</h1>
 
@@ -31,28 +28,20 @@ $this->title = 'My Event';
         
         <div class="index-form">
 
-<?php $form = ActiveForm::begin(); ?>
-
-<?= $form->field($model, 'events_id')->dropDownList(
-    ArrayHelper::map(Events::find()->all(), 'events_id', 'events_name'),
-    ['prompt' => 'Select Events']
-)
-?>
- <?php ActiveForm::end(); ?>
-        <!-- <select class="form-control" >
+         <select class="form-control" >
             <option>1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
             <option>5</option>
-        </select> -->
+        </select> 
     </div>
 
         <div class="row">
         <div class="col-lg-3 colcust3">
         <div class=" panel panel-default ">
             <div class="panel-heading">
-                <h2>Guest</h2>
+                <h2>Weddings</h2>
             </div>
             <div class="panel-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -65,13 +54,11 @@ $this->title = 'My Event';
             </div>
             </div>
            
-
-
-            
+   
         <div class="col-lg-3 colcust3">
         <div class=" panel panel-default ">
             <div class="panel-heading">
-                <h2>Budget</h2>
+                <h2>Meetings</h2>
             </div>
             <div class="panel-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -89,7 +76,7 @@ $this->title = 'My Event';
         <div class="col-lg-3 colcust3 ">
         <div class=" panel panel-default ">
             <div class="panel-heading">
-                <h2>Todo</h2>
+                <h2>ConcertS</h2>
             </div>
             <div class="panel-body">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
