@@ -1,0 +1,30 @@
+.images
+{
+    width: 30% !important;
+}
+
+.gimage
+{
+    width: 50% !important;
+}
+
+.selectcost{
+    background-color: black;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 3rem;
+    margin-top: 10px;
+}
+@media only screen and (max-width : 992px) {
+    .selectcost{
+        background-color: black;
+        width: 50%;
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 2px;
+        height: 3rem;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,78 @@
+<html>
+
+    <head>
+        <title>News</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="manifest" href="/manifest.json">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="materialize-v0.100.2/mater/css/materialize.min.css" media="screen,projection">
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="nav-wrapper black">
+                    <a href="#" class="brand-logo center">News</a>
+                    <ul id="nav-mobile" class="left">
+                        <li> <select id="sourceSelector" class="browser-default selectcost">
+                            </select></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <main>
+
+        </main>
+        <footer>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="materialize-v0.100.2/mater/js/materialize.min.js"></script>
+
+            <!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+            <script>
+                $(document).ready(function () {
+//                    $('#sourceSelector').material_select();
+
+                    $('.materialboxed').materialbox();
+                });
+            </script>
+            <script>window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '182207365740912',
+                        autoLogAppEvents: true,
+                        xfbml: true,
+                        version: 'v2.12'
+                    });
+                };
+
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+            <script>
+                // Only works after `FB.init` is called
+                function myFacebookLogin() {
+                    FB.login(function () {}, {scope: 'publish_actions'});
+                }
+            </script>
+            <script src="app.js"></script>
+        </footer>
+    </body>
+
+</html>
